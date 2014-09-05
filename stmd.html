@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>test stmd</title>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://jgm.github.io/stmd/js/stmd.js"></script>
+  <script type="text/javascript">
+
+var writer = new stmd.HtmlRenderer();
+var reader = new stmd.DocParser();
+  var parsed;
+  var render = function() {
+    var result = writer.renderBlock(parsed);
+  document.getElementById("result").innerHTML = result;
+};
+  var parseAndRender = function () {
+    var loc = document.getElementById("text").innerHTML
+    parsed = reader.parse(loc);
+  render();
+  document.getElementById("text").style.display = 'none';
+  };
+</script>
+<style>
+
+body {
+  color: #FFFFFF;
+  background: #000000;
+  font-size: 150%;
+}
+#result {
+  width: 32em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8em;
+}
+
+</style>
+
+</head>
+
+<body onload="parseAndRender()">
+
+<div id="text">
+# Markdown test
+
+- here's a bullet
+- And another
+
+## Here's a second-level heading
+
+1. this is the first item
+2. and another
+3. and yet a third
+
+Here's a paragraph of lipsum
+
+> with a blockquote
+> 
+> Here's more blockquote
+
+
+</div>
+<div id="result">
+
+</div>
+</body>
+</html>
