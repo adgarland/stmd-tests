@@ -1,4 +1,4 @@
-Standard Markdown Tests
+CommonMark Tests
 ==========
 
 Tests and experiments with CommonMark.
